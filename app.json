@@ -1,0 +1,13 @@
+{
+   "expo": {
+    "name": "RNBlrApp",
+    "version": "1.0.0",
+    "sdkVersion": "19.0.0",
+    "android": {
+      "package": "com.geekyants.RNBlrApp",
+    },
+    "ios": {
+      "bundleIdentifier": "com.geekyants.RNBlrApp",
+    }
+   }
+ }
