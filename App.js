@@ -3,6 +3,7 @@ import Expo from "expo";
 import { StyleSheet, Text, View } from "react-native";
 import { StyleProvider } from "native-base";
 import EventsPage from "./src/EventsPage.js";
+import EventDetails from "./src/EventComponents/EventDetails.js";
 import MainStackRouter from "./src/MainStackRouter.js";
 import * as firebase from "firebase";
 import MainStore from "./src/Store/MainStore";
@@ -26,13 +27,6 @@ export default class App extends React.Component {
       isReady: false
     };
   }
-  componentDidMount() {
-    // Firebase
-    firebase.database().ref("Events/").on("value", data => {
-      MainStore.events = data;
-      console.log(MainStore.events, "9090909090");
-    });
-  }
   async componentWillMount() {
     await Expo.Font.loadAsync({
       Roboto: require("native-base/Fonts/Roboto.ttf"),
@@ -45,7 +39,7 @@ export default class App extends React.Component {
     if (!this.state.isReady) {
       return <Expo.AppLoading />;
     }
-    return <MainStackRouter />;
+    return <EventDetails />;
   }
 }
 
